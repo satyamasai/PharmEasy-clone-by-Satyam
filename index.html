@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="common.css">
+    <script src="https://kit.fontawesome.com/c1f6d516b6.js" crossorigin="anonymous"></script>
+   
+    <title>PharmEasy: Online Pharmacy & Medical Store in India </title>
+    <style>
+        
+        .logo{
+            width: 16%;
+            height: auto;
+            padding-left: 8px;
+            /* border: 1px solid red; */
+            margin-top: -22px;
+        }
+        .logo>img{
+           width: 90%; 
+           margin-top: 10px;
+           margin-left: 10px;
+        }
+        .search_box{
+          width: 80%;
+          height: auto;
+          /* border: 2px solid blue;    */
+        }
+        .up{
+            width: 80%;
+            height: 570%;
+            /* border: 1px solid yellow; */
+            display: flex;
+        }
+        #pincode{
+            border: none;
+            width: 180px;
+            height: 42px;
+            color: grey;
+            font-size: 14px;
+            font-weight: bolder;
+            /* border-radius: 10px; */
+            /* margin: auto; */
+            margin-top: 4px;
+            padding: 12px;
+            padding-right: 10px;
+            border-right: 1px solid grey;
+        }
+        .search{
+            /* border: 2px solid red; */
+            width: 98%;
+            height: 57%;
+            background-color: white;
+            border-radius: 9px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #inputbar{
+            width: 60%;
+            height: 80%;
+            font-size: 18px;
+            padding-left: 10px;
+            margin-top: 5px;
+            border: none;
+            /* display: inline; */
+        }
+        .search-logo{
+            font-size: 30px;
+            margin-top: 10px;
+            color: gray;
+        }
+        a{
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            margin: 20px;
+            font-weight: bolder;
+            margin-top: 80px;
+            /* margin-bottom: 0%; */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+            
+        }
+        .down{
+            /* border: 1px solid rgb(27, 216, 42); */
+            padding-top: 17px;
+            padding-bottom: 1%;
+            display: flex;
+            justify-content: space-between;
+        }
+        a:hover{
+            color: black;
+            text-decoration:underline;
+        }
+#Asignup:hover{
+    color: black;
+
+}
+    </style>
+</head>
+<body id="mybody">
+    <!-- *********************header*********************** -->
+        <div class="navbar">
+            <div class="logo">
+            <img src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png" alt="">
+                
+
+            </div>
+            <div class="search_box">
+                    <div class="up">
+                        <div class="search">
+                            <select name="" id="pincode">
+                                <option value="">select Pin Code </option>
+                            </select>
+                            <input type="text" id="inputbar" placeholder="Search medicine/healthcare products @18% Off"> 
+                            <div class="search-logo"><i class="fa-solid fa-magnifying-glass"></i></div>
+                               
+                        </div>
+                      
+                
+                
+            </div>
+            <div class="down">
+                <div>
+                    <a href="product.html">Order medicine</a>
+                    <a href="product.html">Healthcare products</a>
+                    <a href="">Lab Tests</a>
+                    <a href="">RTPCR</a>
+                </div>
+                <div style="padding-bottom: 5px; ";"><a href=""> <i class="fa-solid fa-magnifying-glass-dollar"></i>Offers</a>
+                    <a id="Asignup" href="loginsignup.html"><i class="fa-regular fa-face-grin-wide"></i>Login/Signup</a>
+                   
+                
+                    <a href="cart.html"><img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg"  alt=""> Cart</a></div>
+                  <!-- <a href="login.html"></a> -->
+                </div>
+            </div>
+
+        </div>
+        <!-- *****************this part for sliding windows -->
+        <div id="slidingwindow">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://cms-contents.pharmeasy.in/banner/f94b6f47e03-MED25_Dweb.jpg?dim=1440x0&dpr=1&q=100" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://cms-contents.pharmeasy.in/banner/b9b34dbc96d-GETCSH_DWEB.jpg?dim=1440x0&dpr=1&q=100" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://cms-contents.pharmeasy.in/banner/67c90823870-psp_dweb_may.jpg?dim=1440x0&dpr=1&q=100" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+    
+        </div>
+       
+            
+
+
+
+        <!--******************************************* lower body ************************************-->
+          <div class="offer-div">
+              <div>
+                  
+                  <button>Order Now</button><img src="https://assets.pharmeasy.in/web-assets/dist/7c645a8d.png?dim=186x0&dpr=1&q=100" alt="">
+
+              </div>
+              <div>  <button class="orange">Order Now</button><img src="https://assets.pharmeasy.in/web-assets/dist/c7c7095b.png?dim=186x0&dpr=1&q=100" alt=""></div>
+              <div>  <button class="blue">Order Now</button><img src="https://assets.pharmeasy.in/web-assets/dist/e1d3ac1c.png?dim=186x0&dpr=1&q=100" alt=""></div>
+          </div>
+          <!-- ************************pharmeasyplus+++  bar section -->
+          <div class="pharmeasyplus">
+              <img src="https://assets.pharmeasy.in/web-assets/dist/e3db129c.png" alt="">
+              <h4>Save flat 5% extra on medicine & enjoy FREE delivery with PLUS membership</h2>
+              <img src="https://assets.pharmeasy.in/web-assets/dist/b20b0932.png" alt="">
+          </div>
+          <!-- Offers sectiion-sliding windows -->
+          
+          <h3 style="margin-left: 10px; color: rgb(80, 80, 80); margin-top: 8px;"><img src="https://assets.pharmeasy.in/web-assets/dist/67890676.svg" alt=""> Offers just for you</h2>
+          <div class="partnersoffer">
+              <div><img src="https://cms-contents.pharmeasy.in/offer/a53595448ca-labslogocart.jpg?dim=60x0&dpr=1&q=100" alt="">
+                  <h5>Get FLAT Rs.300 OFF on
+                    PharmEasy Lab tests on..
+                    Code: CHECKUP300</h5>
+              </div>
+              <div><img src="https://cms-contents.pharmeasy.in/offer/2ee0fa15254-HDFClogosquare.jpg?dim=60x0&dpr=1&q=100" alt="">
+                <h5>Get FLAT Rs.300 OFF on
+                    PharmEasy Lab tests on..
+                    Code: CHECKUP300</h5>
+            </div>
+              <div><img src="https://cms-contents.pharmeasy.in/offer/e11270f3e3f-paytmcashbackoptimized.png?dim=60x0&dpr=1&q=100" alt="">
+                <h5>Get FLAT Rs.300 OFF on
+                    PharmEasy Lab tests on..
+                    Code: CHECKUP300</h5>
+                </div>
+              <div><img src="https://cms-contents.pharmeasy.in/offer/8500c9729db-logo_PhonePe_PhonePe.png?dim=60x0&dpr=1&q=100" alt="">
+                <h5>Get FLAT Rs.300 OFF on
+                    PharmEasy Lab tests on..
+                    Code: CHECKUP300</h5>
+            </div>
+                                
+            </div>
+
+              <!-- ************Frewquently booked labs -->
+
+              <!-- **************************************************** -->
+        
+              <!-- Featured brands section ++++-->
+              <h2 style="margin-top: 8px; margin-left:8px ; margin-bottom: 8px; color:rgb(107, 103, 103);">Featured Brands</h2>
+              <div class="featuredbrand">
+                    <div><img src="https://cms-contents.pharmeasy.in/carousel_item/a41d0aebe7b-Horlicks-min.png?dim=146x0&dpr=1&q=100" alt=""></div>
+                    <div><img src="https://cms-contents.pharmeasy.in/carousel_item/1151b7d7c0e-LivEasy-min.png?dim=146x0&dpr=1&q=100" alt=""></div>
+                    <div><img src="https://cms-contents.pharmeasy.in/carousel_item/9cf653bfca1-App_Featured-brand_Plum.jpg?dim=146x0&dpr=1&q=100" alt=""></div>
+                    <div><img src="https://cms-contents.pharmeasy.in/carousel_item/201210bc27d-App_Huggies.jpg?dim=146x0&dpr=1&q=100" alt=""></div>
+                    <div><img src="https://cms-contents.pharmeasy.in/carousel_item/2208690a9b0-Nivea-min.png?dim=146x0&dpr=1&q=100" alt=""></div>
+                    <div><img src="https://cms-contents.pharmeasy.in/carousel_item/c9fc0cd6ef6-Revital-min.png?dim=146x0&dpr=1&q=100" alt=""></div>
+                    <div><img src="https://cms-contents.pharmeasy.in/carousel_item/e8a5cabe9f3-Volini-min.png?dim=146x0&dpr=1&q=100" alt=""></div>
+                    <div><img src="https://cms-contents.pharmeasy.in/carousel_item/790a43a124d-App_digine.png?dim=146x0&dpr=1&q=100" alt=""></div>
+              </div>
+
+
+              <!-- ************************************** -->
+
+
+
+              <!-- Deals of the day ******************-->
+              <div class="dealsoftheday">
+                  <img src="https://assets.pharmeasy.in/web-assets/dist/cc9b301d.svg" alt="">
+                  <h2>Deals of the Day   |</h2>
+
+              </div>
+
+              <!-- ****************************** -->
+
+              <!-- Health artical -->
+              <div class="health-artical">
+                       <!-- <h2>Health Articles</h2> -->
+                    <div>
+                        <img src="https://blog-images.pharmeasy.in/2022/04/30200640/14-3.jpg?dim=0x230&dpr=1&q=100" alt="">
+                        <h4>9 Best Face Wash For Acne-Prone Skin In India</h4>
+                        <p>Table of Contents BEST FACE WASH FOR ACNE-PRONE SKIN IN INDIABENEFITS OF FACE WASH FOR ACNE-PRONE SKINTHINGS...</p>
+                      
+                    </div>
+                    <div><img src="https://blog-images.pharmeasy.in/2022/04/29113631/26.jpg?dim=0x230&dpr=1&q=100" alt="">
+                        <h4>9 Best Face Wash For Acne-Prone Skin In India</h4>
+                        <p>Table of Contents BEST FACE WASH FOR ACNE-PRONE SKIN IN INDIABENEFITS OF FACE WASH FOR ACNE-PRONE SKINTHINGS...</p></div>
+                    <div>
+                        <img src="https://blog-images.pharmeasy.in/2022/04/29113329/16-2.jpg?dim=0x230&dpr=1&q=100" alt="">
+                        <h4>9 Best Face Wash For Acne-Prone Skin In India</h4>
+                        <p>Table of Contents BEST FACE WASH FOR ACNE-PRONE SKIN IN INDIABENEFITS OF FACE WASH FOR ACNE-PRONE SKINTHINGS...</p>
+                        
+                    </div>
+              </div>
+
+              <!-- ******************* -->
+
+              <!-- registerd info section div******** -->
+
+                    <div class="registereduser">
+                        
+
+                        <div> <img src="https://assets.pharmeasy.in/web-assets/dist/4d2f7c48.svg" alt="">
+                            <h1>25 Million</h1> 
+                        <h3>Registered Users as of Jun 30, 2021</h3> </div>
+                         <div><img src="https://assets.pharmeasy.in/web-assets/dist/92c372bb.svg" alt="">
+                        <h1>8.8 Million</h1>
+                        <h3>PharmEasy order asof FY21 </h3></div>
+                        <div><img src="https://assets.pharmeasy.in/web-assets/dist/773ae9c5.svg" alt="">
+                            <h1>50K+</h1>
+                            <h3>
+                           SKUs sold inQ1FY22
+                        </h3></div>
+                        <div>
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/f2d557d3.svg" alt="">
+                            <h1>18K+</h1>
+                            <h3>PinCode services for the month of june 2021</h3>
+                        </div>
+
+                    </div> 
+                    <!-- *****************customer opinion**************** -->
+                    <div class="customeropinion">
+                        <div> <h2>Lipi Chaudhary</h3>
+                            <h4>April 15, 2020</h4>
+                            <p>This app is a game changer for me. I am unable
+                                to go out always to buy medicinal products.
+                                Pharmeasy gives me the last liberty to shop
+                                essential healthcare products from home. The
+                                app is very user friendly and me being an elderly
+                                person do not find any difficulty in using it. They
+                                deliver well in time. Thanks</p>
+                        </div>
+                        <div>
+                            <h2> JashanPreet Kaur</h3>
+                            <h4>September 18, 2020</h4>
+                            <p>This app is a game changer for me. I am unable
+                                to go out always to buy medicinal products.
+                                Pharmeasy gives me the last liberty to shop
+                                essential healthcare products from home. The
+                                app is very user friendly and me being an elderly
+                                person do not find any difficulty in using it. They
+                                deliver well in time. Thanks</p>
+                        </div>
+                        <div>
+                            <h2>Nikita Agraval</h3>
+                            <h4>April 15, 2021</h4>
+                            <p>This app is a game changer for me. I am unable
+                                to go out always to buy medicinal products.
+                                Pharmeasy gives me the last liberty to shop
+                                essential healthcare products from home. The
+                                app is very user friendly and me being an elderly
+                                person do not find any difficulty in using it. They
+                                deliver well in time. Thanks</p>
+                        </div>
+                        <div>
+                            <h2>Arena Geroge</h3>
+                            <h4>March 15, 2020</h4>
+                            <p>This app is a game changer for me. I am unable
+                                to go out always to buy medicinal products.
+                                Pharmeasy gives me the last liberty to shop
+                                essential healthcare products from home. The
+                                app is very user friendly and me being an elderly
+                                person do not find any difficulty in using it. They
+                                deliver well in time. Thanks</p>
+                        </div>
+                    </div>
+
+
+                    <!-- ******************-------------------------- -->
+                    <!-- ------------------------appdownload add -->
+                    <div class="appdownload">
+                             <div class="rightapp">
+                                  <div>
+                                      <h1>Simplifying Healthcare, Impacting Lives</h1>
+                                  </div>
+                                  <div>
+                                      <h1>Download The App For Free</h1>
+                                      <img src="https://assets.pharmeasy.in/web-assets/dist/4e4f1cab.png" alt="">
+                                      <img src="https://assets.pharmeasy.in/web-assets/dist/83095c03.png" alt="">
+                                  </div>
+                             </div>
+
+
+
+                             <div class="leftappimage">
+                                 <img src="https://assets.pharmeasy.in/web-assets/dist/1d1ccea7.jpg" alt="">
+                             </div>
+
+                    </div>
+                    <!-- *------------------------------------------- -->
+                    <!-- ------------------------------------------ -->
+                     <div class="topselling">
+
+                        <h4>Top Selling Healthcare products: </h4>
+                        <p>AccuCheck active | supradyn multivitamin tablets | DR Morepen BG 03-50 strips | Dettole antiseptic liquid | Ensur diabeties care vanilla sugar free jar |
+                            Dettole instant Hand Sanitizer |Everherb Shilajit |AccuCheck active | supradyn multivitamin tablets | DR Morepen BG 03-50 strips | Dettole antiseptic liquid | Ensur diabeties care vanilla sugar free jar
+                        </p>
+                        <h4>Top selling medicines:</h4>
+                        <p> Dolovera Gel| Neurobion Forte | Chyrioral Forte Crocin Advance Sofrarmycin| Dexorange| Becadexarmin Folvite LIvogen Becosules Fourderm 
+                            | Nurokind Plus | Burnol | Crocin 650
+                            Mintop 5 Thrombophob| Evion 600</p>
+                            <h4>Covid Preventives</h4>
+                            <p>
+                                N95 Masks |
+                                Hand Sanitizers |
+                                Hand Gloves, Disinfectants, Thermometers & more!</p>
+                                <h4>Your One-Stop Online Pharmacy - PharmEasy</h4>
+
+                                <h5>We've got India covered!</h5>
+                                <h4>Say Goodbye to All Your Healthcare Worries With PharmEasy!</h4>
+                                <p>PharmEasy is here to help you take it easy! We are amongst one of India's top online pharmacy and medical care platforms.
+                                    It enables you to order pharmaceutical and healthcare products online by connecting you
+                                     to registered retail pharmacies and get them delivered to your home. We are an online medical store, making your purchase easy,
+                                      simple, and affordable!</p>
+                                <h4>How Are We Making Lives Simpler With Our Online Medical Store?</h4>
+                                <p>Our doorstep delivery service is available in PAN-India across top cities like Bangalore, Delhi, Mumbai, Kolkata, Hyderabad, 
+                                    Gurgaon, Noida, Pune, etc. Our online medical store also allows you to choose from 1 lakh+ products incl. OTC products and medical equipment. PharmEasy is a one-stop online medical platform where you can also book diagnostic tests including blood tests, full-body checkups, and other preventive health check-ups at an affordable cost, right from the comfort of your home. We have partnered with trusted & certified labs that
+                                     arrange for a sample pick-up from the convenience of your home. They also provide you with timely reports.</p>
+                                     <h4>Why Are We The Most Preferred Online Pharmacy?</h4>
+                                     <p>Lucrative offers on our platform allow you to make payment online and via various payment wallets at a discounted price. Alternatively,
+                                          you can also choose to pay cash on delivery as we deliver the products at your doorstep. We cater to all your pharmaceutical needs and also make ordering medicines online a hassle-free experience for you. We connect you only with registered retail pharmacies & certified diagnostic labs.
+                                          We ensure that healthcare is affordable to all and make the process of ordering online simple.</p>
+                                          <h4>Sit Back & Relax While You Get Your Essentials Delivered Every Month!</h4>
+                                          <p>It’s tough to remember to refill every month, especially in the case of chronic diseases. PharmEasy’s subscription service not only ensures that you are reminded of your refills but also makes sure that you are never out on your medical essentials.
+                                               You will get a reminder every month and your order will be delivered at your convenience!</p>
+                                               <h4>Access medical and health information:</h4>
+                                               <p>PharmEasy delivers reliable and accurate medical information that has been carefully written, vetted and validated by our health experts. Our specialists curate high-quality and most reliable literature about medicines, illnesses, lab tests, 
+                                                   Ayurvedic and over the counter health products.</p>
+                            <h4>We Believe in ‘Simplifying Healthcare, Impacting Lives!’</h4>                       
+                            </div>
+                            <!-- *********************about company divs -------------------------->
+
+         <div class="about">
+
+             <div>
+                 <h3>Company</h3>
+                 <p>About Us</p>
+                 <p>Careers</p>
+                 <p>Blog</p>
+                 <p>Partner with PharmEasy</p>
+                 <p>Sell at PharmEasy</p>
+                 <h3>Our Services</h3>
+                 <p>Order Medicine</p>
+                 <p>Healthcare products</p>
+                 <p>Lab Tests</p>
+                 <p>Find Nerest Colllection Center</p>
+             </div>
+             <div>
+                 <h3>Featured categories</h3>
+                 <p>Personal Care</p>
+                 <p>Health Food and Drinks</p>
+                 <p>Skin Care</p>
+                 <p>Home Care</p>
+                 <p>Ayurvedic care</p>
+                 <p>Sexual Wellness</p>
+                 <p>Fitness & suppliments</p>
+                 <p>Mopther and Baby Cares</p>
+                 <p>Healkthcare Divices</p>
+                 <p>Surgical and Dressing</p>
+                 <p>Covid Essentials</p>
+                 <p>Health COndition</p>
+                 <p>Diabetic Care</p>
+                 <p>Elderly Care</p>
+                 <p>Accessories And Wearables</p>
+                 <p>Pet Care</p>
+             </div>
+             <div>
+                 <h3>Need Help</h3>
+                 <p>Need Help</p>
+                 <p>  Browse All Medicines</p>
+                 <p> Browse All Molecules</p>
+                 <p>  Browse All Cities & Areas
+                    FAQs</p>
+                 <h3>Policy Info</h3>
+                    <p>Editorial Policy</p>
+                    <p>Privacy Policy</p>
+                    <p>Vulnerability Disclosure Policy</p>
+                    <p>Terms and Conditions</p>
+                    <p>Customer Support Policy</p>
+                    <p> Return Policy</p>
+             </div>
+             <div id="last-logo-div">
+                 <h3>Follow Us</h3>
+                 <i class="fa-brands fa-instagram-square"></i>
+                 <i class="fa-brands fa-facebook"></i>
+                 <i class="fa-brands fa-twitter"></i>
+                 <i class="fa-brands fa-youtube"></i>
+
+
+             </div>
+            
+
+
+
+
+
+         </div>
+
+ <!-- -------------------Payments partners logo section -->
+                        <div class="payment-partners">
+                            <h2>Our Payments Partners</h2>
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/af0c6812.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/0e010044.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/1066bb1f.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/3a1a533d.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/fbea1701.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/4733a49d.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/b278e536.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/0aca2077.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/44a51ca5.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/d058b00d.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/e9445364.svg" alt="">
+                            <img src="https://assets.pharmeasy.in/web-assets/dist/6e09c713.svg" alt="">
+                        </div>
+
+
+
+
+
+
+
+
+          </div>
+    </div>
+   
+ <script src="js/bootstrap.min.js"></script>   
+</body>
+</html>
+<script>
+    // -----------------
+    var info= JSON.parse(localStorage.getItem("logininfo")) || []
+    
+    console.log(info);
+// -------------------------------------------
+if(info != null || info != "" || info != [] || info.length!=0){
+
+    var sliding2= document.querySelector(".featuredbrand")
+    sliding2.addEventListener("click", myFun)
+
+    var sliding1= document.querySelector(".offer-div")
+    sliding1.addEventListener("click", myFun)
+    function myFun(){
+        window.location.href="items.html"
+    }
+   
+
+    function myFun(){
+        window.location.href="items.html"
+    }
+
+}
+else{
+    console.log("asfjajifhaifh");
+    var sliding2= document.querySelector(".featuredbrand")
+    sliding2.addEventListener("click", myFun)
+
+    var sliding1= document.querySelector(".offer-div")
+    sliding1.addEventListener("click", myFun)
+    // function myFun(){
+    //     window.location.href="items.html"
+    // }
+  
+    function myFun(){
+        //window.location.href="items.html"
+        alert("Please Log in first!")
+    }
+}
+  
+    
+</script>

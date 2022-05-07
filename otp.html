@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+
+body, html {
+	height: 100%;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+}
+
+body {
+	background-color: teal;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+
+	input {
+		width: 30px;
+		height: 50px;
+		/* background-color: ; */
+		border: none;
+		line-height: 50px;
+		text-align: center;
+		font-size: 24px;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 200;
+		color: black;
+		margin: 0 2px;
+	}
+
+	.splitter {
+		padding: 0 5px;
+		color: white;
+		font-size: 24px;
+	}
+
+
+.prompt {
+	margin-bottom: 20px;
+	font-size: 20px;
+	color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="prompt">
+        Enter the code generated on your mobile device below to log in!
+    </div>
+    
+    <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+        <input type="text" id="digit-1" name="digit-1" data-next="digit-2" />
+        <input type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+        <input type="text" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+        <span class="splitter">&ndash;</span>
+        <input type="text" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" />
+        <input type="text" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" />
+        <input type="text" id="digit-6" name="digit-6" data-previous="digit-5" />
+
+    </form>
+    <button id="otp" style="margin-top: 10px; width: 100px ; height: 40px">submit</button>
+</body>
+
+</html>
+<script>
+var otp= document.querySelector("#otp")
+otp.addEventListener("click", otpFun)
+function otpFun(){
+    console.log("afkaeh");
+    var digit1=document.querySelector("#digit-1").value
+    var digit2=document.querySelector("#digit-2").value
+
+    var digit3=document.querySelector("#digit-3").value
+
+    var digit4=document.querySelector("#digit-4").value
+    var digit5=document.querySelector("#digit-5").value
+    var digit6=document.querySelector("#digit-6").value
+    if(digit1==1 && digit2==1&& digit3==1 && digit4==1 && digit5==1&& digit6==1){
+        alert(" thankyou for Shoping !!item placed successfully!!")
+        window.location.href="index.html"
+    }else{
+        alert("please enter correct OTP")
+        window.location.reload()
+    }
+
+
+}
+</script>

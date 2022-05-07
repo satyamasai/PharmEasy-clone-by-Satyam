@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <script src="https://kit.fontawesome.com/c1f6d516b6.js" crossorigin="anonymous"></script>
+        <title>PharmaEasy Login/Signup</title>
+        <style>
+            body{
+            background-color: teal;
+        }
+  #loginsignup{
+      width: 70%;
+      height: 600px;
+      /* background-color: blueviolet; */
+      /* border: 2px solid black; */
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      background-color: teal;
+  }
+  .signup,.login{
+    width: 48%;
+    height: 98%;
+    /* border: 1px solid red; */
+    margin: auto;  
+  }
+  .signup>h2{
+      margin-left: 100px ;
+      font-style: italic;
+      font-size: 40px;
+    /* text-transform: uppercase; */
+
+  }
+  .login>h2{
+      font-style: italic;
+      font-size: 30px;
+      margin-left: 40%;
+      margin-top: 40px;
+  }
+  label{
+      display: block;
+      margin-bottom: 5PX;
+      margin-top: 10PX;
+      margin-left: 5PX;
+  }
+  input{
+      margin: 10px;
+      width: 90%;
+      height: 40px;
+      border: 2px solid teal;
+      border-radius: 8px;
+      color: black;
+      padding-left: 5px;
+      margin-top: 10px;
+
+  }
+  .headerlogin{
+
+
+    width: 100%;
+    height: 70px;
+    /* border: 1px solid red; */
+    background-color: teal;
+    display: flex;
+  }
+  .headerlogin>img{
+      margin-top: 5px;
+      margin-left: 2px;
+      width: 13%;
+      height: 80%;
+
+  }
+  .headerlogin>div{
+      width: 80%;
+      height: 50%;
+      /* border: 2px solid black; */
+      margin-top: 15px;
+      margin-left: 20px;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 10px;
+      border-radius: 8px;
+      /* color: white; */
+      /* padding: 5px; */
+      padding-top: 5px;
+      /* padding-bottom: 5px; */
+      background-color: white;
+  }
+    .headerlogin>div>input{
+        border: none;
+        height: 80%;
+        margin-top: 1px;
+        
+    }
+    .headerlogin>div>i{
+    font-size: 30px;
+    margin: 3px;
+    color: teal;
+
+  }
+  a{ 
+      
+      
+      
+      border: 2px solid teal;
+      background-color: white;
+      color: teal;
+      
+      border-radius: 10px;
+      font-size: 40px;
+      margin-left: 160px;
+      margin-top: 30px;
+  }
+  #loginbtn{
+      margin-top: 10px;
+      margin-left: 140px;
+  }
+    </style>
+</head>
+<body>
+    <!-- -----------heaDER -->
+        <div class="headerlogin">
+            <img id="home" src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png" alt="">
+            <div><input type="text" value="Search medicine"><i class="fa-solid fa-magnifying-glass"></i>
+             
+            </div>
+
+        </div>
+   
+    <!-- ------------------------------- -->
+    <div id="loginsignup">
+        <div class="signup">
+             <h2>Ceate an account</h2>
+            <form action="" id="signup-form">
+                    <label for=""> Enter Name : </label>
+                    <input id="name" type="text" placeholder="Enter Name">
+                    <label for="E-mail"> Enter e-mail ID :</label>
+                    <input id="email" type="email" placeholder="enter email">
+                    <label for="password"> Choose password :</label>
+                    <input id="password" type="text" placeholder="Enter Password">
+                    <input type="submit" value="Create an account">
+                   
+    
+            </form>
+            <button id="loginbtn">Log in</button>
+          
+            
+        </div>
+         <!-- <div class="login">
+                <h2>Log in</h2>
+                    <form action="" id="login-form">
+                        <input type="text" placeholder="Enter email id ">
+                        <input type="password" placeholder="Enter Password">
+                        <input type="submit" value="Log in">
+                    </form>
+                
+         </div> -->
+        
+.
+    </div>
+</body>
+</html>
+<script>
+     // ---------
+     var home=document.querySelector("#home")
+    home.addEventListener("click" , homeFun)
+    function homeFun(){
+        
+        window.location.href="index.html"
+    }
+    // --------
+    var signupform=document.querySelector("#signup-form")
+    // console.log("check");
+    signupform.addEventListener("submit",signupFun)
+    // console.log("check");
+    var userdata= JSON.parse(localStorage.getItem(userdata)) || []
+
+        //   signup scripts*******************
+    function signupFun(){
+        event.preventDefault();
+
+        var userdataobj={
+            name:document.querySelector("#name").value,
+            email:document.querySelector("#email").value,
+            password:document.querySelector("#password").value
+
+        }
+
+     
+       alert("account successfully created")
+        userdata.push(userdataobj)
+        localStorage.setItem("userdata",JSON.stringify(userdata))
+        window.location.href="login.html"
+      
+      
+
+
+    }
+    // *******************************************
+    var loginbtn=document.querySelector("#loginbtn")
+    loginbtn.addEventListener("click", loginFun)
+    function loginFun(){
+        window.location.href="login.html"
+    }
+    // login scripts
+  
+</script>

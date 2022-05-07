@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items</title>
+    <style>
+        body{
+            background-color: teal;
+        }
+        /* header css */
+        .headerlogin{
+
+
+width: 100%;
+height: 70px;
+/* border: 1px solid red; */
+background-color: teal;
+display: flex;
+}
+.headerlogin>img{
+  margin-top: 5px;
+  margin-left: 2px;
+  width: 13%;
+  height: 80%;
+
+}
+#inputdiv{
+  width: 70%;
+  height: 50%;
+  border: 2px solid black;
+  margin-top: 15px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  border-radius: 8px;
+  /* color: white; */
+  /* padding: 5px; */
+  padding-top: 5px;
+  /* padding-bottom: 5px; */
+  background-color: white;
+}
+.headerlogin>div>input{
+    border: none;
+    height: 80%;
+    margin-top: 1px;
+    
+}
+.headerlogin>div>i{
+font-size: 30px;
+margin: 3px;
+color: teal;
+
+}
+.headerlogin>a{
+    font-size: 25px;
+    color: white;
+    margin-left: 70px;
+    margin-top: 15px;
+}
+        /* ******************* */
+        .container{
+            width: 90%;
+            display: grid;
+            margin: auto;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(8,300px);
+            /* border: 1px solid red; */
+            gap: 20px;
+            background-color: rgb(159, 206, 206);
+        }
+        .container>div{
+            
+            border: 1px solid rgb(222, 222, 231);
+            line-height: 20px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            background-color: rgba(255, 255, 255, 0.753);
+        }
+        .card:hover{
+            border: 2px solid teal;
+        }
+        .card>div{
+            width: 70%;
+            height: 50%;
+            margin: auto;
+            /* border: 2px solid black; */
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            padding: 5px;
+            
+        }
+        .card>div>img{
+            height: 90%;
+            width: 60%;
+            
+        }
+        .card>h2{
+            font-size: 18px;
+            width: 90%;
+            margin: 10px;
+        }
+        .card>p{
+            margin: 20px;
+        }
+        .card>button{
+            margin-bottom: 1px;
+            margin-left: 20px;
+
+        }
+        .card>button:hover{
+            background-color: teal;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+
+
+
+    <div class="headerlogin">
+        <img id="home" src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png" alt="">
+        <div id="inputdiv">
+            <input type="text" value="Search medicine"><i class="fa-solid fa-magnifying-glass"></i>
+          
+        </div>
+        
+        <a href="cart.html"><img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg"  alt=""> Cart</a>
+        <h2 id="counter" style="margin-left: 5px; color: red;"></h2>      
+ 
+    </div>
+        
+ 
+
+    <!-- -------------- -->
+    <div class="container">
+
+    </div>
+    
+</body>
+</html>
+<script>
+
+var item=[
+    {
+        product_name:"Zandu ULTRA power balm 8 mML",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I05670/zandu-ultra-power-balm-8-ml-1-1643881627.jpg",
+        product_id:"1",
+        product_price:40
+
+
+    },
+   
+    {
+        product_name:"Everherb Aloe vera Juice",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/E54755/everherb-aloe-vera-juice-with-pulp-rejuvenates-skin-hair-1-litre-bottle-2-1643882394.jpg",
+        product_id:"2",
+        product_price:199
+    },
+    {
+        product_name:"Gas-O-fast Active zeera antacid sa",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I34550/gas-o-fast-active-jeera-antacid-sachet-of-5-g-2-1643880465.jpg",
+        product_id:"3",
+        product_price:7
+    },
+    {
+        product_name:"IOdex balm 8gm",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I02653/iodex-balm-8gm-2-1647496868.jpg",
+        product_id:"4",
+        product_price:36.50
+    },
+    {
+        product_name:"Volini pain relief spray",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/183162/volini-pain-relief-spray-bottle-of-15-g-1-1641398893.jpg",
+        product_id:"5",
+        product_price: 54
+    },
+    {
+        product_name:"Himalaya liv.52 DS",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/105900/himalaya-liv52-ds-tablets-60s-2-1643883659.jpg",
+        product_id:"6",
+        product_price:145
+    },
+    {
+        product_name:"Itone bottle of 10ml Eyedrops",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/271834/itone-bottle-of-10ml-eye-drops-3-1641530663.jpg",
+        product_id:"7",
+        product_price:60
+    },
+    {
+        product_name:"Zandu Pancharist",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I10877/zandu-pancharishta-digestive-tonic-bottle-of-650-ml-2-1643881448.jpg",
+        product_id:"8",
+        product_price:170
+    },
+    {
+        product_name:"Dr Ortho an ayurvedic Medicine oil bottle",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I06462/dr-ortho-an-ayurvedic-medicine-oil-bottle-of-120-ml-1-1645456739.jpg",
+        product_id:"9",
+        product_price:259
+    },
+    {
+        product_name:"Liveasy wellness calcium, magnecium ",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/T22634/liveasy-wellness-calcium-magnesium-vitamin-d3-zinc-bones-dental-health-bottle-60-tabs-2-1643876895.jpg",
+        product_id:"10",
+        product_price:300
+    },
+    {
+        product_name:"Himalaya Tentex 40",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/168815/himalaya-tentex-forte-tablets-10s-1-1643884197.jpg",
+        product_id:"11",
+        product_price:81
+    },
+    {
+        product_name:"Omnigel tube 50 gm",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I35099/omnigel-tube-of-50gm-gel-1-1641788079.jpg",
+        product_id:"12",
+        product_price:"91"
+    },
+    {
+        product_name:"Pharmqaeasy multivitamin",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/Q90234/pharmeasy-multivitamin-multimineral-pack-of-120-2-1642415706.jpg",
+        product_id:"13",
+        product_price:694
+    },
+    {
+        product_name:"Kofol chewable tablets",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/N27936/kofol-chewable-tablets-sugar-free-jar-of-60-2-1643879869.jpg",
+        product_id:"14",
+        product_price:39
+    },
+    {
+        product_name:"Volini pain relief spray",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/183162/volini-pain-relief-spray-bottle-of-15-g-1-1641398893.jpg",
+        product_id:"5",
+        product_price: 54
+    },
+    {
+        product_name:"Himalaya liv.52 DS",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/105900/himalaya-liv52-ds-tablets-60s-2-1643883659.jpg",
+        product_id:"6",
+        product_price:145
+    },
+    {
+        product_name:"Itone bottle of 10ml Eyedrops",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/271834/itone-bottle-of-10ml-eye-drops-3-1641530663.jpg",
+        product_id:"7",
+        product_price:60
+    },
+    {
+        product_name:"Zandu Pancharist",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I10877/zandu-pancharishta-digestive-tonic-bottle-of-650-ml-2-1643881448.jpg",
+        product_id:"8",
+        product_price:170
+    },
+    {
+        product_name:"Dr Ortho an ayurvedic Medicine oil bottle",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I06462/dr-ortho-an-ayurvedic-medicine-oil-bottle-of-120-ml-1-1645456739.jpg",
+        product_id:"9",
+        product_price:259
+    },
+    {
+        product_name:"Liveasy wellness calcium, magnecium ",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/T22634/liveasy-wellness-calcium-magnesium-vitamin-d3-zinc-bones-dental-health-bottle-60-tabs-2-1643876895.jpg",
+        product_id:"10",
+        product_price:300
+    },
+    {
+        product_name:"Himalaya Tentex 40",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/168815/himalaya-tentex-forte-tablets-10s-1-1643884197.jpg",
+        product_id:"11",
+        product_price:81
+    },
+    {
+        product_name:"Omnigel tube 50 gm",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I35099/omnigel-tube-of-50gm-gel-1-1641788079.jpg",
+        product_id:"12",
+        product_price:"91"
+    },
+    {
+        product_name:"Pharmqaeasy multivitamin",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/Q90234/pharmeasy-multivitamin-multimineral-pack-of-120-2-1642415706.jpg",
+        product_id:"13",
+        product_price:694
+    },
+    {
+        product_name:"Kofol chewable tablets",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/N27936/kofol-chewable-tablets-sugar-free-jar-of-60-2-1643879869.jpg",
+        product_id:"14",
+        product_price:39
+    }, {
+        product_name:"Volini pain relief spray",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/183162/volini-pain-relief-spray-bottle-of-15-g-1-1641398893.jpg",
+        product_id:"5",
+        product_price: 54
+    },
+    {
+        product_name:"Himalaya liv.52 DS",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/105900/himalaya-liv52-ds-tablets-60s-2-1643883659.jpg",
+        product_id:"6",
+        product_price:145
+    },
+    {
+        product_name:"Itone bottle of 10ml Eyedrops",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/271834/itone-bottle-of-10ml-eye-drops-3-1641530663.jpg",
+        product_id:"7",
+        product_price:60
+    },
+    {
+        product_name:"Zandu Pancharist",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I10877/zandu-pancharishta-digestive-tonic-bottle-of-650-ml-2-1643881448.jpg",
+        product_id:"8",
+        product_price:170
+    },
+    {
+        product_name:"Dr Ortho an ayurvedic Medicine oil bottle",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I06462/dr-ortho-an-ayurvedic-medicine-oil-bottle-of-120-ml-1-1645456739.jpg",
+        product_id:"9",
+        product_price:259
+    },
+    {
+        product_name:"Liveasy wellness calcium, magnecium ",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/T22634/liveasy-wellness-calcium-magnesium-vitamin-d3-zinc-bones-dental-health-bottle-60-tabs-2-1643876895.jpg",
+        product_id:"10",
+        product_price:300
+    },
+    {
+        product_name:"Himalaya Tentex 40",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/168815/himalaya-tentex-forte-tablets-10s-1-1643884197.jpg",
+        product_id:"11",
+        product_price:81
+    },
+    {
+        product_name:"Omnigel tube 50 gm",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I35099/omnigel-tube-of-50gm-gel-1-1641788079.jpg",
+        product_id:"12",
+        product_price:"91"
+    },
+    {
+        product_name:"Pharmqaeasy multivitamin",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/Q90234/pharmeasy-multivitamin-multimineral-pack-of-120-2-1642415706.jpg",
+        product_id:"13",
+        product_price:694
+    },
+    {
+        product_name:"Kofol chewable tablets",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/N27936/kofol-chewable-tablets-sugar-free-jar-of-60-2-1643879869.jpg",
+        product_id:"14",
+        product_price:39
+    },
+    {
+        product_name:"Zandu ULTRA power balm 8 mML",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I05670/zandu-ultra-power-balm-8-ml-1-1643881627.jpg",
+        product_id:"1",
+        product_price:40
+
+
+    },
+   
+    {
+        product_name:"Everherb Aloe vera Juice",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/E54755/everherb-aloe-vera-juice-with-pulp-rejuvenates-skin-hair-1-litre-bottle-2-1643882394.jpg",
+        product_id:"2",
+        product_price:199
+    },
+    {
+        product_name:"Gas-O-fast Active zeera antacid sa",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I34550/gas-o-fast-active-jeera-antacid-sachet-of-5-g-2-1643880465.jpg",
+        product_id:"3",
+        product_price:7
+    },
+    {
+        product_name:"IOdex balm 8gm",
+        product_url:"https://cdn01.pharmeasy.in/dam/products_otc/I02653/iodex-balm-8gm-2-1647496868.jpg",
+        product_id:"4",
+        product_price:36.50
+    },
+  
+
+]
+var cartarr= JSON.parse(localStorage.getItem("cartdiv")) || []
+// var count= JSON.parse(localStorage.getItem("counter")) || 0;
+ // ---------
+ var home=document.querySelector("#home")
+    home.addEventListener("click" , homeFun)
+    function homeFun(){
+        
+        window.location.href="index.html"
+    }
+    // --------
+var count=0;
+document.querySelector("#counter").innerText=count
+
+item.forEach(function(elem){
+    var container=document.querySelector(".container")
+   var card= document.createElement("div")
+   var imgdiv= document.createElement("div")
+   card.setAttribute("class","card")
+   var image= document.createElement("img")
+   image.setAttribute("src",elem.product_url)
+   var name=document.createElement("h2")
+   name.innerText=elem.product_name
+   var price=document.createElement("p")
+   price.innerText= "Rs"+" " +elem.product_price
+   imgdiv.append(image)
+   var cartbtn=document.createElement("button")
+   cartbtn.innerText="Add to cart"
+   cartbtn.addEventListener("click", cartFun)
+   card.append(imgdiv,name,price,cartbtn)
+   container.append(card)
+  
+    function cartFun(){
+        cartarr.push(elem)
+        localStorage.setItem("cartdiv",JSON.stringify(cartarr))
+        count++
+        localStorage.setItem("counter",JSON.stringify(count))
+        alert("item added to the cart")
+        var counter=document.querySelector("#counter")
+        counter.innerText=count
+       
+       // window.location.reload()
+    
+    }
+   
+
+
+})   
+
+</script>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Pharmeasy</title>
+    <style>
+        body{
+            background-color: teal; 
+        }
+         .headerlogin{
+
+
+width: 100%;
+height: 70px;
+/* border: 1px solid red; */
+background-color: teal;
+display: flex;
+}
+.headerlogin>img{
+  margin-top: 5px;
+  margin-left: 2px;
+  width: 13%;
+  height: 80%;
+
+}
+.headerlogin>div{
+  width: 80%;
+  height: 50%;
+  /* border: 2px solid black; */
+  margin-top: 15px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  border-radius: 8px;
+  /* color: white; */
+  /* padding: 5px; */
+  padding-top: 5px;
+  /* padding-bottom: 5px; */
+  background-color: white;
+}
+.headerlogin>div>input{
+    border: none;
+    height: 80%;
+    margin-top: 1px;
+    
+}
+.headerlogin>div>i{
+font-size: 30px;
+margin: 3px;
+color: teal;
+
+}
+.login{
+    width: 48%;
+    height: 98%;
+    /* border: 1px solid red; */
+    margin: auto; 
+}
+input{
+      margin: 10px;
+      width: 90%;
+      height: 40px;
+      border: 2px solid teal;
+      border-radius: 8px;
+      color: black;
+      padding-left: 5px;
+      margin-top: 10px;
+
+  }
+    </style>
+</head>
+<body>
+    <div class="headerlogin">
+        <img src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png" alt="">
+        <div><input type="text" value="Search medicine"><i class="fa-solid fa-magnifying-glass"></i>
+            <a href=""></a>
+        </div>
+     </div>   
+        <!-- **************************************login -->
+
+
+        <div class="login">
+            <h2>Log in</h2>
+                <form action="" id="login-form">
+                    <input id="email" type="text" placeholder="Enter email id ">
+                    <input id="password" type="password" placeholder="Enter Password">
+                    <input type="submit" value="Log in">
+                </form>
+            
+     </div> 
+</body>
+</html>
+<script>
+
+      var loginform= document.querySelector("#login-form")
+      loginform.addEventListener("submit",loginFun)
+    
+      var signupdata=JSON.parse(localStorage.getItem("userdata"))
+     
+    
+      function loginFun(){
+        event.preventDefault()
+        var flag=false;
+    
+        var email=document.querySelector("#email").value
+        var password= document.querySelector("#password").value
+      
+  
+     
+        signupdata.forEach(function(elem){
+        
+            console.log(elem);
+            if(email=="" || password==""){
+                alert("enter email and password")
+            }
+            console.log(elem.email, elem.password);
+            console.log(email,password);
+             if(elem.email==email && elem.password==password){
+                    flag = true; 
+                        // -------user-login-dataa-----------
+                            var loginarr=[];
+
+                            var loginfoobj={
+                                email: email,
+                                password: password
+                            }
+                            loginarr.push(loginfoobj)
+                            localStorage.setItem("logininfo", JSON.stringify(loginarr))
+
+// ----------------------------------------
+
+                               
+                  }
+        
+                 
+         
+        })
+                   if(flag==true){
+                       alert("log in successfully")
+                      window.location.href="index.html"
+                  }else {
+                      alert("email-password wrong")
+                  }
+
+
+
+      }
+      
+
+</script>

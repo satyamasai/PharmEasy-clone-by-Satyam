@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <title>Cart-PharmEasy</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        /* body{
+            background-color: teal;
+        } */
+.headerlogin{
+                 width: 100%;
+                height: 70px;
+                /* border: 1px solid red; */
+                background-color: teal;
+                display: flex;
+                }
+.headerlogin>img{
+  margin-top: 5px;
+  margin-left: 2px;
+  width: 13%;
+  height: 80%;
+
+}
+.headerlogin>div{
+  width: 70%;
+  height: 50%;
+  /* border: 2px solid black; */
+  margin-top: 15px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  border-radius: 8px;
+  /* color: white; */
+  /* padding: 5px; */
+  padding-top: 5px;
+  /* padding-bottom: 5px; */
+  background-color:white;
+}
+.headerlogin>div>input{
+  border: none;
+  height: 80%;
+  margin-top: 1px;
+  
+}
+.headerlogin>div>i{
+font-size: 30px;
+margin: 3px;
+color: teal;
+
+}
+.headerlogin>a{
+    font-size: 25px;
+    color: white;
+    margin-left: 70px;
+    margin-top: 15px;
+}
+
+/* ***************************cart table */
+table{
+    border: 1px solid black;
+}.cartdiv{
+    /* border: 2px solid red; */
+    width: 60%;
+    background-color: teal;
+
+}
+.cartdiv>div{
+    width: 100%;
+    height: 100px;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+    /* margin: auto; */
+    background-color: rgb(179, 230, 223);
+}
+.cartdiv>div>img{
+    margin-left: 10px;
+    width:90px;
+    height: 80px;
+    margin-top: 10px;
+}
+.cartdiv>div>h3{
+    margin-left: 10px;
+    margin-top: 20px;
+    font-style: italic;
+}
+.cartdiv>div>h2{
+    margin-left: 10px;
+    margin-top: 20px;
+    color: grey;
+}
+select{
+    width: 30px;
+    height: 30px;
+    border: 1px solid blue;
+    margin-top: 20px;
+}
+button{
+    width: 80px;
+    height: 30%;
+    margin-top: 20px;
+    background-color: rgb(245, 80, 80);
+    margin-left: 20px;
+}
+.parent{
+    display: flex;
+    /* border: 3px solid blue; */
+    background-color: teal;
+}
+.parent>div:last-child{
+    width: 40%;
+    height: 600px;
+    margin-left: 10px;
+    /* border: 2px solid green; */
+    /* margin: auto; */
+    
+
+}
+#promocode{
+    width: 98%;
+    height: 20%;
+    border: 2px solid white;
+    border-radius: 10px;
+
+}
+#total-price{
+    margin-top: 10px;
+    width: 98%;
+    height: 20%;
+    border: 2px solid white;
+    border-radius: 10px;
+
+}#total-price>h2{
+    display: inline;
+}
+#totalvalue{
+    color: white;
+    margin-left: 20px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="headerlogin">
+        <img id="home" src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png" alt="">
+        <div>
+            <input type="text" value="Search medicine"><i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <a href="cart.html"><img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg"  alt=""> Cart</a>
+            <h2 id="counter" style="margin-left: 5px; margin-top: 17px; color: red;"></h2>     
+      </div>
+     
+
+    </div>
+     <!-- ______________________table head -->
+     <div class="parent">
+        <div class="cartdiv">
+                
+        </div>
+        <div id="totaldiv">
+            <div id="promocode">
+                <p style="margin-left:80px; margin-top: 10px; font-size: 25px;">Enter Promo Code and get 30%OFF</p>
+               <input id="promoinput" style="margin-left:80px; height: 30px; border: 2px solid black; padding: 5px;" type="text" placeholder="Enter promocode">
+               <button id="promobtn"  style="border: 2px solid black; border-radius: 10px; height: 30px; margin-left: 50px;">Apply</button>
+            </div>
+            <div id="total-price">
+                <h2 style="margin-left: 20px; margin-top: 100px;">Total Price:</h2>
+                <h2 id="totalvalue">00</h2>
+                <button id="paybtn">Pay</button>
+            </div>
+
+        </div>
+  
+     </div>
+
+<!-- *************************** -->
+</body>
+</html>
+<script>
+    // ---------
+    var home=document.querySelector("#home")
+    home.addEventListener("click" , homeFun)
+    function homeFun(){
+        
+        window.location.href="index.html"
+    }
+    // --------
+     var getcartdata= JSON.parse(localStorage.getItem("cartdiv")) || []
+   
+     //console.log(getcartdata);
+     var counter=JSON.parse(localStorage.getItem("counter")) 
+     console.log(counter);
+     document.querySelector("#counter").innerText=counter
+
+
+     function display(getcartdata){
+        var total=0;
+         document.getElementsByClassName("cartdiv").textContent=""
+        getcartdata.forEach(function(elem){
+     
+     var cartdiv=document.querySelector(".cartdiv")
+       var itemdiv=document.createElement("div")
+       var itmimg=document.createElement("img")
+       itmimg.setAttribute("src",elem.product_url)
+       var name= document.createElement("h2")
+       name.innerText=elem.product_name
+       
+       var price= document.createElement("h3")
+       var quantity= document.createElement("select")
+       quantity.setAttribute("id","quantity")
+       var option1= document.createElement("option")
+       option1.innerText=1
+       option1.setAttribute("value",1)
+       var option2= document.createElement("option")
+       option2.innerText=2
+       option2.setAttribute("value",2)
+       var option3= document.createElement("option")
+       option3.innerText=3
+       option3.setAttribute("value",3)
+    //    -------------------deletebtn-------
+       var deletebtn = document.createElement("button")
+       deletebtn.innerText="Delete"
+    //   deletebtn.addEventListener("click",deleteItem)
+    deletebtn.addEventListener("click",function(){
+        deleteItm(elem.product_name)
+    })
+    //    --------------------quantity---------------
+
+
+    // var quantity1= document.querySelector("#quantity")
+    // quantity.addEventListener("change",qFun)
+    // function qFun(){
+     
+    //         var value=quantity.value 
+    //    total = elem.product_price*value
+    //    total=total+elem.product_price
+    //    totalprice.innerText = total
+        
+     
+    // }
+    // -----------------------
+    
+       quantity.append(option1,option2,option3)
+       price.innerText= "Rs"+" "+elem.product_price
+       itemdiv.append(itmimg,name,price,quantity,deletebtn)
+       cartdiv.append(itemdiv)
+    //    ________________________________________---------
+        total=total+elem.product_price
+       var totalprice=document.querySelector("#totalvalue")
+        totalprice.innerText = total
+    
+
+ })
+
+     }
+     display(getcartdata)
+    //  ------------------------------quantity------------
+
+  
+
+    // ---------------------------------------------------------------
+    
+//   ---------------------------delete function-------------------- 
+     function deleteItm(name){
+         getcartdata= getcartdata.filter(function(element){
+               return element.product_name != name;
+         })
+         counter--
+           
+         localStorage.setItem("counter",counter)
+         localStorage.setItem("cartdiv",JSON.stringify(getcartdata))
+     
+           
+          window.location.reload()
+          getcartdata= JSON.parse(localStorage.getItem("cartdiv"))       
+    
+        }
+    // -------------------------------------------------------------------
+    // ---apply promocode------
+    var promocode=document.querySelector("#promobtn")
+    promocode.addEventListener("click", applyPromo)
+    function applyPromo(){
+        var promoinput=document.querySelector("#promoinput").value
+        if(promoinput=="masai30"){
+            var totalprice=document.querySelector("#totalvalue")
+
+            totalprice.innerText= +totalprice.innerText-(+totalprice.innerText*30)/100; 
+            document.querySelector("#promoinput").value=""
+            
+
+        }else{
+            alert("please enter valid promocode")
+        }
+       
+      } 
+    // ---------------------------paybtn-----------
+    var paybtn=document.querySelector("#paybtn")
+    paybtn.addEventListener("click", payFun)
+    function payFun(){
+        if(getcartdata==[] || getcartdata==null || getcartdata==""){
+            alert("please add item to the cart")
+            window.location.href="items.html"
+        }
+        else{
+            window.location.href="carddetail.html"
+        }
+       
+         
+    }
+   
+   
+    
+    
+
+    
+
+
+
+
+</script>
